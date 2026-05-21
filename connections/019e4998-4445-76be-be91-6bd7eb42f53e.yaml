@@ -1,0 +1,5 @@
+uuid: '019e4998-4445-76be-be91-6bd7eb42f53e'
+name: Debug
+direction: outbound
+connector:
+  uuid: '0192229d-bc1d-7013-a90d-0785c78c5964'

@@ -1,0 +1,5 @@
+uuid: '019e4998-4446-717a-bfa5-91364c56821c'
+name: Runbook Variables
+direction: outbound
+connector:
+  uuid: '01956bca-5a4b-79fc-a3ae-61fcff121682'
