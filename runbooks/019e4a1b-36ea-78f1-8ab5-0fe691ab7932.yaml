@@ -1,0 +1,92 @@
+uuid: '019e4a1b-36ea-78f1-8ab5-0fe691ab7932'
+name: test
+trigger:
+  description: JSON Endpoint
+  inbound_connection:
+    uuid: '019e4ea8-6254-78fc-bcf0-8beb89567d25'
+  trigger_template:
+    uuid: c23047dd-eb10-42b4-a67d-6ea6c58e3958
+  config_mapping:
+  - field_id: body_schema
+    fixed:
+    - id: alert_type
+      label: Alert type
+      type: string
+      hint: 'For example: alert'
+      sample: alert
+    - id: alert_status
+      label: Alert status
+      type: string
+      hint: 'For example: active'
+      sample: active
+    - id: alert_message
+      label: Alert message
+      type: string
+      hint: 'For example: ABCD0001234 critical - prod-server-01 CPU Usage High CPU
+        usage exceeded 95% on prod-server'
+      sample: ABCD0001234 critical - prod-server-01 CPU Usage High CPU usage exceeded
+        95% on prod-server
+    - id: alert_id
+      label: Alert ID
+      type: string
+      hint: 'For example: ABCD0001234'
+      sample: ABCD0001234
+    - id: alert_level
+      label: Alert level
+      type: string
+      hint: 'For example: critical'
+      sample: critical
+    - id: subject
+      label: Subject
+      type: string
+      hint: 'For example: alertseverity:''critical'' servername:''prod-server-01''
+        alertname:''CPU Usage High'''
+      sample: alertseverity:'critical' servername:'prod-server-01' alertname:'CPU
+        Usage High'
+    - id: note
+      label: Note
+      type: string
+      hint: 'For example: Auto-generated LogicMonitor alert: Critical CPU usage >95%
+        detected on prod-server-01 Alert ID: LMD0001234, currently active. Requires
+        immediate investigation and action.'
+      sample: 'Auto-generated LogicMonitor alert: Critical CPU usage >95% detected
+        on prod-server-01 Alert ID: LMD0001234, currently active. Requires immediate
+        investigation and action.'
+    - id: tags
+      label: Tags
+      type: string
+      array: true
+      hint: 'A list of values, for example: High Alert, critical'
+      sample:
+      - High Alert
+      - critical
+    - id: service_instance_name
+      label: Service instance name
+      type: string
+      hint: 'For example: Xurrent iPaaS'
+      sample: Xurrent iPaaS
+    - id: user_name
+      label: User name
+      type: string
+      hint: 'For example: anji'
+      sample: anji
+actions:
+- reference: log-message
+  description: Log Message
+  outbound_connection:
+    uuid: '019e4998-4445-76be-be91-6bd7eb42f53e'
+  action_template:
+    uuid: '0192229d-fb7a-78d2-91c8-341915eb9e87'
+  input_mapping:
+  - field_id: message
+    fixed: test done
+- reference: log-message1
+  description: Log Message1
+  predecessor_action_reference: log-message
+  outbound_connection:
+    uuid: '019e4998-4445-76be-be91-6bd7eb42f53e'
+  action_template:
+    uuid: '0192229d-fb7a-78d2-91c8-341915eb9e87'
+  input_mapping:
+  - field_id: message
+    fixed: updates stack

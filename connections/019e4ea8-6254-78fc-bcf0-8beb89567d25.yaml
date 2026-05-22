@@ -1,0 +1,5 @@
+uuid: '019e4ea8-6254-78fc-bcf0-8beb89567d25'
+name: JSON Endpoint
+direction: inbound
+connector:
+  uuid: ef6a3a61-cdd1-4ec6-9d27-cb2aa5f8427d
