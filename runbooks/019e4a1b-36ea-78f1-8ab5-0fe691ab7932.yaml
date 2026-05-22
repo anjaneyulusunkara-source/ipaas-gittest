@@ -90,3 +90,13 @@ actions:
   input_mapping:
   - field_id: message
     fixed: updates stack
+- reference: log-message3
+  description: Log Message3
+  predecessor_action_reference: log-message1
+  outbound_connection:
+    uuid: '019e4998-4445-76be-be91-6bd7eb42f53e'
+  action_template:
+    uuid: '0192229d-fb7a-78d2-91c8-341915eb9e87'
+  input_mapping:
+  - field_id: message
+    fixed: error logging
